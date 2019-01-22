@@ -1,0 +1,36 @@
+import React, { Component } from "react";
+
+class App extends Component {
+  render() {
+    return <Connt />;
+  }
+}
+
+class Connt extends Component {
+  state = {
+    count: 0
+  };
+  addNum = () => {
+    this.setState({
+      count: this.state.count + 1
+    });
+  };
+  removNum = () => {
+    this.setState({ count: this.state.count - 1 });
+  };
+  render() {
+    return (
+      <React.Fragment>
+        <div style={{ margin: "2rem" }}>
+          <button onClick={this.addNum}>add Num</button>
+          <span style={{ fontSize: "20px", margin: "1rem" }}>
+            count : {this.state.count}{" "}
+          </span>
+          <button onClick={this.removNum}>Rmove Num</button>
+        </div>
+      </React.Fragment>
+    );
+  }
+}
+
+export default App;
