@@ -5,6 +5,8 @@ class ButtonWithBind extends Component {
     super();
 
     this.state = { toggle: false };
+
+    this.toggleButton = this.toggleButton.bind(this);
   }
 
   toggleButton() {
