@@ -27,3 +27,33 @@ class ButtonWithBind extends Component {
 }
 
 export default ButtonWithBind;
+
+
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+// same with ES6
+//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+import React, { Component } from "react";
+
+class ButtonWithoutBind extends Component {
+  state = { toggle: false }
+  
+  toggleButton = () => {
+    this.setState(prevState => ({ toggle: !prevState.toggle }));
+  }
+  
+  render() {
+    const toggle = this.state.toggle;
+
+    return (
+      <div>
+        <button onClick={this.toggleButton}>
+          {toggle ? "ON" : "OFF"}
+        </button>
+      </div>
+    );
+  }
+}
+
+export default ButtonWithoutBind;
